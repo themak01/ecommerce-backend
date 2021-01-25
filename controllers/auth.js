@@ -88,6 +88,7 @@ exports.isAuthenticated = (req, res, next) => {
     console.log(checker);
     return res.status(403).json({
       error: "ACCESS DENIED",
+      
     });
   }
   console.log(checker);

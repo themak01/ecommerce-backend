@@ -36,7 +36,7 @@ exports.createPost = (req, res) => {
 
     if (!description){
       return res.status(400).json({
-        error:"Please include all fields"
+        error:"Please fill Description"
       })
     }
     
@@ -47,6 +47,7 @@ exports.createPost = (req, res) => {
 
     let post = new Post({
       postedBy: req.profile,
+      description,
       fields
     })
 
@@ -77,7 +78,7 @@ exports.getPost = (req, res) => {
   req.post.photo = undefined
   return res.json(req.post)
 }
-
+//middleware
 exports.photo = (req, res, next) => {
 
   if(req.post.photo,data) {
