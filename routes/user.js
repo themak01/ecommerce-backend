@@ -8,6 +8,6 @@ router.param("userId", getUserById);
 
 router.get("/user/:userId", isSignedIn, isAuthenticated, getUser);
 router.put("/user/update/:userId", isSignedIn, isAuthenticated, updateUser);
-router.get("/users", getAllUsers)
+router.get("/all/users/:userId", isSignedIn, isAuthenticated, isAdmin,getAllUsers)
 
 module.exports = router;

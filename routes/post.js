@@ -26,8 +26,8 @@ router.delete("/post/delete/:postId/:userId", isSignedIn, isAuthenticated, delet
 //update post
 router.put("/post/update/:postId/:userId", isSignedIn, isAuthenticated, updatePost)
 
-//get all post for admin only
-router.post("/all/users/posts", isSignedIn, isAuthenticated, isAdmin, getAllPosts)
+//get all post 
+router.get("/all/posts",isSignedIn,isAuthenticated, getAllPosts)
 
 //like post
 router.put("/post/like/:postId", isSignedIn, isAuthenticated, getLikePost)
